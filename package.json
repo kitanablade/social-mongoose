@@ -1,0 +1,25 @@
+{
+  "name": "social-mongoose",
+  "version": "1.0.0",
+  "description": "Create a social media api using a Mongo db implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "seed": "node utils/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitanablade/social-mongoose.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kitanablade/social-mongoose/issues"
+  },
+  "homepage": "https://github.com/kitanablade/social-mongoose#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
