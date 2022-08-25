@@ -41,6 +41,14 @@ userSchema.virtual('friendCount').get(function () {
 
 const User = model('User', userSchema);
 
+User.create(
+  {
+    username: "p-diddy",
+    email: "p@diddy.com",
+  },
+  (err) => (err ? handleError(err) : console.log("Created new document"))
+);
+
 module.exports = User;
 
 

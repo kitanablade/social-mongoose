@@ -7,9 +7,27 @@ module.exports = router;
 //     .then((users) => res.json(users))
 //     .catch((err) => res.status(500).json(err));
 // })
+// we need 2 controllers for User and Thought
+// hint: router.route('/').get(functionToGetUser()).post(funcToPost())
+// 
+const {
+  getUsers,
+//   getSingleUser,
+//   createUser,
+//   updateUser,
+//   deleteUser,
+} = require('../../controllers/userController.js');
 
-router.get("/", async(res,req)=>{
-    const response = await User.find();
-    res.json(response);
-})
+// /api/users
+// router.route('/').get(getUsers).post(createUser);
+router.route('/').get(getUsers);
+
+// /api/users/:userId
+// router
+//   .route('/:userId')
+//   .get(getSingleUser)
+//   .put(updateUser)
+//   .delete(deleteUser);
+
+module.exports = router;
 
