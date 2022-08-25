@@ -1,10 +1,10 @@
 const { Schema, model } = require("mongoose");
-const reactionSchema = require("./Reaction")
+const reactionSchema = require("./Reaction");
 
 const thoughtSchema = new Schema({
   thoughtText: {
     type: String,
-    required: true,
+    required: "You need to leave a thought!",
     minLength: 1,
     maxLength: 280,
   },
@@ -12,9 +12,6 @@ const thoughtSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-    get: (timestamp) => {
-      dateFormat(timestamp);
-    },
   },
   username: {
     type: String,
@@ -24,20 +21,17 @@ const thoughtSchema = new Schema({
 },
 {
   toJSON: {
+    virtuals: true,
     getters: true,
   },
   id: false,
 });
+
+thoughtSchema.virtual('reactionCount').get(function(){
+  return this.reactions.length;
+})
+
 const Thought = model('Thought', thoughtSchema);
-
-Thought.create(
-  {
-    thoughtText: "just thinking about stuff",
-    username: "p@diddy.com",
-  },
-  (err) => (err ? console.log(err) : console.log("Created new document"))
-);
-
 
 module.exports = Thought;
 
