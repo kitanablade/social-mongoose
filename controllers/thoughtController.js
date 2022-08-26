@@ -1,5 +1,5 @@
 const { ObjectId } = require("mongoose").Types;
-const { User, Thought } = require("../models");
+const { User, Thought, Reaction } = require("../models");
 
 module.exports = {
   // Get all thoughts
@@ -27,7 +27,7 @@ module.exports = {
   createThought(req, res) {
     Thought.create(req.body)
       //find associated user then populate the array of thoughts
-      //user/video example #25
+      //user/response example #25
       //pass the user id in
       .then((thought) => {
         return User.findOneAndUpdate(
@@ -94,14 +94,12 @@ module.exports = {
   removeReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $pull: { reaction: { reactionId: req.params.reactionId } } },
+      { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { runValidators: true, new: true }
     )
       .then((thought) =>
         !thought
-          ? res
-              .status(404)
-              .json({ message: "No thought found with that ID :(" })
+          ? res.status(404).json({ message: 'No thought with this id!' })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
