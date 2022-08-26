@@ -56,7 +56,7 @@ module.exports = {
           ? res.status(404).json({ message: "No thought with that ID" })
           : Thought.deleteMany({ _id: { $in: thought.thoughts } })
       )
-      .then(() => res.json({ message: "Thought and thoughts deleted!" }))
+      .then(() => res.json({ message: "Thought and reactions deleted!" }))
       .catch((err) => res.status(500).json(err));
   },
   // Update a thought
