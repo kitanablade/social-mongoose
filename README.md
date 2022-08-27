@@ -1,2 +1,51 @@
-# social-mongoose
-Create a social media api using a Mongo db implementation
+# Social Media Mongoose API
+
+![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/l/notepad4e?color=red)
+## Description 
+This is an API for a social media site built using Mongoose.
+
+```md
+AS A social media startup
+I WANT an API for my social network that uses a NoSQL database
+SO THAT my website can handle large amounts of unstructured data
+```
+
+## Acceptnce Criteria
+```md
+GIVEN a social network API
+WHEN I enter the command to invoke the application
+THEN my server is started and the Mongoose models are synced to the MongoDB database
+WHEN I open API GET routes in Insomnia for users and thoughts
+THEN the data for each of these routes is displayed in a formatted JSON
+WHEN I test API POST, PUT, and DELETE routes in Insomnia
+THEN I am able to successfully create, update, and delete users and thoughts in my database
+WHEN I test API POST and DELETE routes in Insomnia
+THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+```
+Demo Video:
+[Screencastify video walk-through](https://drive.google.com/file/d/1NQrEiAsdgOynPEfM7VsottwPvzVJXzYw/view)
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage Information](#usage-information)
+* [License](#license)
+* [Contribution Information](#contribution-information)
+* [Tests](#tests)
+* [Questions](#questions)
+## Installation 
+To install, run the following commands:
+```bash
+npm i
+npm start
+```
+## Usage Information
+Use Insomnia or your API tester of choice and interface with the routes to interact with the DB.
+## License
+This app is licensed under the Eclipse Marketplace (EPL 2.0) license.
+## Contribution Information
+If you wish to contribute, please contact the developer.
+## Tests
+Coming soon in V1.1
+## Questions 
+For more information, please [email me](mailto:kit@gmail.com) or see [kitanablade's Github page](https://github.com/kitanablade).
+#### [⬆️ Back to Top](#description)
